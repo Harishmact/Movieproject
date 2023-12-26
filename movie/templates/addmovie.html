@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+{% block content %}
+<h1>Add  movies</h1><br>
+
+    <form method="POST" enctype="multipart/form-data">   <!--for not to manipulate file data-->
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="form-label">NAME</label>
+            <input type="text" class="form-control" name="t" placeholder="enter the title">
+        </div>
+         <div class="mb-3">
+            <label class="form-label">DESC</label>
+            <input type="text" class="form-control" name="d" placeholder="enter the description">
+        </div>
+         <div class="mb-3">
+            <label class="form-label">YEAR</label>
+            <input type="number" class="form-control" name="y" placeholder="enter the year">
+        </div>
+         <div class="mb-3">
+            <label class="form-label">IMAGE</label>
+            <input type="file" class="form-control" name="i">
+        </div>
+
+ <div class="mb-3">
+     <input type="submit" class="form-control">
+        </div>
+
+    </form>
+
+{% endblock %}
